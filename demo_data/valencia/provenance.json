@@ -1,0 +1,424 @@
+{
+  "event_id": "valencia-2024-horta-sud",
+  "generated_at": "2026-08-18T15:06:51.277689Z",
+  "processing": {
+    "analysis_crs": "EPSG:32630",
+    "backscatter_units": "dB (10*log10 of OPERA RTC power)",
+    "common_valid_coverage": 0.9999933238532048,
+    "config_sha256": "f07d1df547ad97b84e384ad0eee1b563ac56111f819334dd003bc755b501020c",
+    "detection_method": "Multi-Otsu low-backscatter plus dual-polarization change rules",
+    "filter": "3x3 median",
+    "resolution_m": 30,
+    "shape": [
+      534,
+      561
+    ],
+    "software": "RadarWatch 0.1.0",
+    "web_crs": "EPSG:4326"
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "acquired_at": "2024-10-31T18:02:00+00:00",
+      "asset": {
+        "bytes": 9078843,
+        "path": "data/raw/references/cems_exact_time.geojson",
+        "sha256": "890e7b51674e1cf135ef08867b1aa545446f89ac099cf0729efe2cd883f54ff2"
+      },
+      "attribution": "European Union, Copernicus EMSR773",
+      "caveat": "Derived from the same Sentinel-1 acquisition; not independent ground truth.",
+      "kind": "reference_flood_extent",
+      "label": "Operational-product agreement",
+      "license": "Copernicus Emergency Management Service data policy",
+      "name": "exact_time",
+      "provider": "Copernicus Emergency Management Service EMSR773",
+      "url": "https://services9.arcgis.com/rNFYfizUMWjwfBKB/arcgis/rest/services/EMSR773_AOI01_DEL_PRODUCT_observedEventA_v1_json/FeatureServer/0"
+    },
+    {
+      "acquired_at": "2024-10-31T10:22:00+00:00",
+      "asset": {
+        "bytes": 4482355,
+        "path": "data/raw/references/cems_optical.geojson",
+        "sha256": "2b62dbafbcaaf58f29c404f2183715af34b40fab731d467d51134ef1b74fcde1"
+      },
+      "attribution": "European Union, Copernicus EMSR773",
+      "caveat": "Independent high-resolution optical delineation acquired about eight hours earlier.",
+      "kind": "reference_flood_extent",
+      "label": "Cross-sensor temporal comparison",
+      "license": "Copernicus Emergency Management Service data policy",
+      "name": "optical",
+      "provider": "Copernicus Emergency Management Service EMSR773",
+      "url": "https://services9.arcgis.com/rNFYfizUMWjwfBKB/arcgis/rest/services/EMSR773_AOI03_DEL_PRODUCT_observedEventA_v1_json/FeatureServer/0"
+    },
+    {
+      "assets": [
+        {
+          "bytes": 3081991,
+          "path": "data/raw/osm/roads.parquet",
+          "sha256": "e58e4cfe325da36b403a74765a9cc49a0cd0bdfc4a5fa00d6712597dbb0389d6"
+        },
+        {
+          "bytes": 204253,
+          "path": "data/raw/osm/railways.parquet",
+          "sha256": "a43025df9d287f435bf16b484f3c7a80688a4100d08b8ce0d35033ee5b719766"
+        },
+        {
+          "bytes": 10381038,
+          "path": "data/raw/osm/buildings.parquet",
+          "sha256": "de63353cceb6213787468b45dadfa538941dee6d716df57c7714193ed64fe03a"
+        },
+        {
+          "bytes": 37061,
+          "path": "data/raw/osm/critical_assets.parquet",
+          "sha256": "c022b2ed7e9b5ccbda2abebc269764f0697ac07a1f9cf3bbab8e230a19652f1f"
+        },
+        {
+          "bytes": 20244,
+          "path": "data/raw/osm/settlements.parquet",
+          "sha256": "e07b63505e098137c681fd1d31ff66d4c5a88d8e92392572c86f82e6eca1aafa"
+        },
+        {
+          "bytes": 21705762,
+          "path": "data/raw/osm/drive.graphml",
+          "sha256": "25804f9de7a7300607033429ca5afad78ba9560292f7abfbe294b1b217480726"
+        }
+      ],
+      "attribution": "© OpenStreetMap contributors",
+      "kind": "infrastructure",
+      "license": "ODbL",
+      "provider": "OpenStreetMap contributors"
+    },
+    {
+      "acquired_at": "2024-10-19T18:03:10Z",
+      "assets": [
+        {
+          "asset_type": "VV",
+          "bytes": 6428282,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_VV.tif",
+          "sha256": "a3e604b87860f3a562d59f88f885655b35326a27cb103e7da87ccf49fa0c420a",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_VV.tif"
+        },
+        {
+          "asset_type": "VH",
+          "bytes": 6463722,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_VH.tif",
+          "sha256": "14e1cf7fcda4bae8a1bd08b70a20184c72cdba1dd7d72f4daba9854f6337da4b",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_VH.tif"
+        },
+        {
+          "asset_type": "mask",
+          "bytes": 53027,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_mask.tif",
+          "sha256": "412ac04e0e5547d5d3eda9976b250973ed834c81e5563e2316e68a163d282843",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0_mask.tif"
+        }
+      ],
+      "attribution": "NASA/JPL OPERA, distributed by NASA ASF DAAC",
+      "catalogue_record": {
+        "bytes": 7369,
+        "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0.catalog.json",
+        "sha256": "1293ec30666b49b0e898d877781816a0f7c2fb00f361248165a7833e4c36d153"
+      },
+      "flight_direction": "ASCENDING",
+      "kind": "sar",
+      "license": "NASA Earth Science Data and Information Policy",
+      "polarizations": [
+        "VV",
+        "VH"
+      ],
+      "product_id": "OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0",
+      "product_version": "1.0",
+      "provider": "NASA ASF DAAC / OPERA",
+      "relative_orbit": 103,
+      "role": "before"
+    },
+    {
+      "acquired_at": "2024-10-19T18:03:12Z",
+      "assets": [
+        {
+          "asset_type": "VV",
+          "bytes": 6434369,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_VV.tif",
+          "sha256": "d2ca2b8e30bc8e0e5b856107cd342ddc0dac32e8dc5e11bf16b9246d27c261fd",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_VV.tif"
+        },
+        {
+          "asset_type": "VH",
+          "bytes": 6464777,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_VH.tif",
+          "sha256": "ec4b62cf00bc78dfbfeeee79a21e1e2c229f1a651124e7628334e4cb13dc96fd",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_VH.tif"
+        },
+        {
+          "asset_type": "mask",
+          "bytes": 49313,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_mask.tif",
+          "sha256": "77e0f8292c19b73d046571343275c819aa02d2e1fe6a9332f913b98c3204a87c",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0_mask.tif"
+        }
+      ],
+      "attribution": "NASA/JPL OPERA, distributed by NASA ASF DAAC",
+      "catalogue_record": {
+        "bytes": 7368,
+        "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0.catalog.json",
+        "sha256": "699bf35ea6d3c6a8e2ce394c674aa920d75230c57f2c9560a3900f28c3c302f6"
+      },
+      "flight_direction": "ASCENDING",
+      "kind": "sar",
+      "license": "NASA Earth Science Data and Information Policy",
+      "polarizations": [
+        "VV",
+        "VH"
+      ],
+      "product_id": "OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0",
+      "product_version": "1.0",
+      "provider": "NASA ASF DAAC / OPERA",
+      "relative_orbit": 103,
+      "role": "before"
+    },
+    {
+      "acquired_at": "2024-10-31T18:03:10Z",
+      "assets": [
+        {
+          "asset_type": "VV",
+          "bytes": 6364915,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_VV.tif",
+          "sha256": "17934593034cc5bb8787890c6f617f4220ef8be2a789a86287fbd9b761daacbd",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_VV.tif"
+        },
+        {
+          "asset_type": "VH",
+          "bytes": 6465900,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_VH.tif",
+          "sha256": "b3aa648366f5fc84b549c2382e6d6bb2b335100accbaa37b6192dab3f7ab8cd4",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_VH.tif"
+        },
+        {
+          "asset_type": "mask",
+          "bytes": 53064,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_mask.tif",
+          "sha256": "e32d6ed9be75944b1bef0e01b7d2fd0067e7de87aa03c90591e5c2da440a2caa",
+          "shape": [
+            1582,
+            3104
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            679860.0,
+            0.0,
+            -30.0,
+            4381320.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0_mask.tif"
+        }
+      ],
+      "attribution": "NASA/JPL OPERA, distributed by NASA ASF DAAC",
+      "catalogue_record": {
+        "bytes": 7371,
+        "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0.catalog.json",
+        "sha256": "a5f9c4b23c7a6de9cec289161108343ae78e3e17354e3f6e3993f55a97fc2506"
+      },
+      "flight_direction": "ASCENDING",
+      "kind": "sar",
+      "license": "NASA Earth Science Data and Information Policy",
+      "polarizations": [
+        "VV",
+        "VH"
+      ],
+      "product_id": "OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0",
+      "product_version": "1.0",
+      "provider": "NASA ASF DAAC / OPERA",
+      "relative_orbit": 103,
+      "role": "after"
+    },
+    {
+      "acquired_at": "2024-10-31T18:03:12Z",
+      "assets": [
+        {
+          "asset_type": "VV",
+          "bytes": 6405215,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_VV.tif",
+          "sha256": "cfc0857cdbbb87eeaa79e9070f020fc460ba89ecd38dd57fc36bb5126419ec77",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_VV.tif"
+        },
+        {
+          "asset_type": "VH",
+          "bytes": 6436272,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_VH.tif",
+          "sha256": "51a2d082436c8c740a17e611633829c48958b5a9fa09f306f40e5b418565acb0",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_VH.tif"
+        },
+        {
+          "asset_type": "mask",
+          "bytes": 49360,
+          "crs": "EPSG:32630",
+          "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_mask.tif",
+          "sha256": "7a775c43e8e90a0c5ec84a9540017d75256e0e209f5ba3b5a6f38a2024362133",
+          "shape": [
+            1581,
+            3105
+          ],
+          "transform": [
+            30.0,
+            0.0,
+            676260.0,
+            0.0,
+            -30.0,
+            4399620.0
+          ],
+          "url": "https://datapool.asf.alaska.edu/RTC/OPERA-S1/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0_mask.tif"
+        }
+      ],
+      "attribution": "NASA/JPL OPERA, distributed by NASA ASF DAAC",
+      "catalogue_record": {
+        "bytes": 7369,
+        "path": "data/raw/sar/OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0.catalog.json",
+        "sha256": "ddffdf99ef5430050158cd4fa3142744ea2ff36691fccc8d5051a32547ce4bfd"
+      },
+      "flight_direction": "ASCENDING",
+      "kind": "sar",
+      "license": "NASA Earth Science Data and Information Policy",
+      "polarizations": [
+        "VV",
+        "VH"
+      ],
+      "product_id": "OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0",
+      "product_version": "1.0",
+      "provider": "NASA ASF DAAC / OPERA",
+      "relative_orbit": 103,
+      "role": "after"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Lightweight Streamlit Cloud runtime. The offline pipeline uses pyproject.toml.
+folium>=0.20,<1
+pandas>=2.2,<3
+streamlit>=1.50,<2
+streamlit-folium>=0.25,<1

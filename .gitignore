@@ -1,0 +1,32 @@
+.venv/
+.uv-cache/
+cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.env
+.netrc
+_netrc
+.dodsrc
+
+# Pipeline data and generated products
+data/raw/
+data/interim/
+data/processed/
+data/stages/
+logs/
+
+# Generated demo files are selectively force-added by the publisher.
+demo_data/*
+!demo_data/README.md
+!demo_data/valencia/
+!demo_data/valencia/**
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

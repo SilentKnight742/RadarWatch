@@ -1,0 +1,138 @@
+{
+  "detection": {
+    "default": {
+      "detected_area_km2": 1.6641,
+      "high_confidence_area_km2": 1.3932,
+      "vh_drop_db": -2.0,
+      "vv_drop_db": -3.0
+    },
+    "feature_count": 11,
+    "sensitivity": {
+      "default": {
+        "detected_area_km2": 1.6641,
+        "iou": 0.44973938942665675,
+        "precision": 0.6533261222282315,
+        "recall": 0.5907090464547677
+      },
+      "lenient": {
+        "detected_area_km2": 2.0097,
+        "iou": 0.3966699314397649,
+        "precision": 0.5441110613524407,
+        "recall": 0.5941320293398533
+      },
+      "strict": {
+        "detected_area_km2": 1.5687,
+        "iou": 0.44580152671755724,
+        "precision": 0.6701090074584051,
+        "recall": 0.5711491442542788
+      }
+    },
+    "water_threshold_db": -12.0,
+    "water_threshold_method": "multi_otsu_3class_clamped"
+  },
+  "evaluation": {
+    "exact_time": {
+      "acquired_at": "2024-10-31T18:02:00+00:00",
+      "area_difference_km2": -0.1764000000000001,
+      "caveat": "Derived from the same Sentinel-1 acquisition; not independent ground truth.",
+      "detected_area_km2": 1.6641,
+      "dice_f1": 0.6204417051874679,
+      "false_positive_rate": 0.0021544263209725503,
+      "iou": 0.44973938942665675,
+      "label": "Operational-product agreement",
+      "overlap_area_km2": 1.0872,
+      "precision": 0.6533261222282315,
+      "recall": 0.5907090464547677,
+      "reference_area_km2": 1.8405,
+      "valid_comparison_area_km2": 269.6148
+    },
+    "optical": {
+      "acquired_at": "2024-10-31T10:22:00+00:00",
+      "area_difference_km2": 0.8469,
+      "caveat": "Independent high-resolution optical delineation acquired about eight hours earlier.",
+      "detected_area_km2": 1.6641,
+      "dice_f1": 0.11171563293434893,
+      "false_positive_rate": 0.005675273886373985,
+      "iou": 0.059162504802151364,
+      "label": "Cross-sensor temporal comparison",
+      "overlap_area_km2": 0.1386,
+      "precision": 0.08328826392644673,
+      "recall": 0.1696035242290749,
+      "reference_area_km2": 0.8171999999999999,
+      "valid_comparison_area_km2": 269.6148
+    }
+  },
+  "event": {
+    "after_acquired_at": "2024-10-31T18:03:10+00:00",
+    "analysis_crs": "EPSG:32630",
+    "area_name": "Horta Sud, Valencia, Spain",
+    "before_acquired_at": "2024-10-19T18:03:10+00:00",
+    "bounds_wgs84": [
+      -0.58,
+      39.36,
+      -0.39,
+      39.5
+    ],
+    "browse_bounds_wgs84": [
+      -0.5850860834105283,
+      39.355792715548354,
+      -0.3845372129429962,
+      39.50423107174735
+    ],
+    "event_time": "2024-10-29T14:30:00+00:00",
+    "id": "valencia-2024-horta-sud",
+    "title": "Valencia Flood, Horta Sud"
+  },
+  "generated_at": "2026-08-18T15:06:51.277689Z",
+  "infrastructure": {
+    "critical_assets_by_type": {},
+    "detected_flood_area_km2": 1.6641,
+    "exposed_buildings": 1,
+    "exposed_critical_assets": 0,
+    "exposed_railway_overlap_km": 0.9588421104714681,
+    "exposed_railway_segments": 15,
+    "exposed_road_overlap_km": 4.723787720840266,
+    "exposed_road_segments": 36,
+    "roads_by_class": {
+      "motorway": {
+        "overlap_km": 2.8205821004541187,
+        "segments": 10
+      },
+      "other": {
+        "overlap_km": 0.4372769852681579,
+        "segments": 11
+      },
+      "secondary": {
+        "overlap_km": 0.1637481791408569,
+        "segments": 3
+      },
+      "tertiary": {
+        "overlap_km": 0.24871000903718674,
+        "segments": 2
+      },
+      "trunk": {
+        "overlap_km": 1.0534704469399467,
+        "segments": 10
+      }
+    },
+    "terminology": "Intersection/exposure screening; not confirmed damage or closure."
+  },
+  "isolation": {
+    "caveat": "A screening signal based on detected overlap, not confirmed road closure.",
+    "hypothetically_removed_road_edges": 35,
+    "method": "Baseline versus post-removal reachability to buffered-AOI boundary exits",
+    "potentially_isolated_count": 0,
+    "potentially_isolated_names": [],
+    "settlements_evaluated": 194
+  },
+  "runtime_seconds": {
+    "acquire": 47.98299540000153,
+    "detect": 0.45246319999569096,
+    "evaluate": 0.6909449999802746,
+    "impact": 15.3039729000011,
+    "prepare": 18.111230099981185,
+    "publish": 0.09564660000614822,
+    "total": 82.63725319996593
+  },
+  "schema_version": "1.0"
+}

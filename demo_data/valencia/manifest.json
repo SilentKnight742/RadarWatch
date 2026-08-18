@@ -1,0 +1,68 @@
+{
+  "assets": [
+    {
+      "bytes": 4288,
+      "path": "metrics.json",
+      "sha256": "77d32b6ea4dc8085c539a1345f52bd689a5e51f57a8cf619cf44ccccebe9ea15"
+    },
+    {
+      "bytes": 15229,
+      "path": "provenance.json",
+      "sha256": "f5baa068a5c6497d368eda1a40b8e06e836f0621f7711dd78d1d35ca68a4161e"
+    },
+    {
+      "bytes": 327514,
+      "path": "before_vv.png",
+      "sha256": "06e5342eb5f2e0049a8aeca9120985c36a51a959b35d120bf3a8014d2eb03efa"
+    },
+    {
+      "bytes": 319839,
+      "path": "after_vv.png",
+      "sha256": "a2c9ea5df5d97495d864edc5994fcbdca8b0f04f317dc98223b6fde647cf8eb0"
+    },
+    {
+      "bytes": 30055,
+      "path": "flood_extent.geojson",
+      "sha256": "bd5e12fe4ae18e025a0ef2d0d75f2eefe8bd657591c54c4709cea7edbf5b0366"
+    },
+    {
+      "bytes": 203718,
+      "path": "reference_exact_time.geojson",
+      "sha256": "e8d53fee89e57e731e6333ab72991c9155fedb79878a4748fead4c6444afc6eb"
+    },
+    {
+      "bytes": 2006143,
+      "path": "reference_optical.geojson",
+      "sha256": "3d743bcda79f9911bc3a889258e7a5223ba4c8c096673ac15c1f70e8ccc50c85"
+    },
+    {
+      "bytes": 16400,
+      "path": "exposed_roads.geojson",
+      "sha256": "97e92b2c97880c5c7eee6115b4a63852c58eda554499ef303262953b7da049b4"
+    },
+    {
+      "bytes": 5345,
+      "path": "exposed_railways.geojson",
+      "sha256": "79845910040ea43a677e144e461c1244731af6d04c87e9b6afea278ea029eaa6"
+    },
+    {
+      "bytes": 460,
+      "path": "exposed_buildings.geojson",
+      "sha256": "e70debc2a9ef096339d3e42d3c9c2978951652dcda86380e71d4bad497796160"
+    },
+    {
+      "bytes": 52,
+      "path": "exposed_critical_assets.geojson",
+      "sha256": "a55b431e78049bb7fdc7330ffdf2c9f8e87712545ebba199445408d48694225a"
+    },
+    {
+      "bytes": 52,
+      "path": "potentially_isolated_settlements.geojson",
+      "sha256": "a55b431e78049bb7fdc7330ffdf2c9f8e87712545ebba199445408d48694225a"
+    }
+  ],
+  "event_id": "valencia-2024-horta-sud",
+  "generated_at": "2026-08-18T15:06:51.295898Z",
+  "schema_version": "1.0",
+  "total_bytes": 2929095
+}
