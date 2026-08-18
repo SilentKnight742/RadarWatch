@@ -13,6 +13,9 @@ def test_app_avoids_removed_streamlit_width_api() -> None:
     assert "use_container_width" not in source
     assert "streamlit_folium" not in source
     assert "st.iframe(" in source
+    assert "BEFORE · 19 OCT 2024" in source
+    assert "AFTER · 31 OCT 2024" in source
+    assert source.count("opacity=1.0") == 2
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -152,3 +155,28 @@ def test_app_explains_corrupt_bundle(tmp_path: Path, monkeypatch) -> None:
 
     assert not app.exception
     assert "precomputed demo bundle is corrupt" in app.error[0].value
+
+
+def test_app_rejects_identical_comparison_images(tmp_path: Path, monkeypatch) -> None:
+    demo = tmp_path / "demo"
+    make_demo(demo)
+    (demo / "after_vv.png").write_bytes((demo / "before_vv.png").read_bytes())
+    assets = []
+    for asset_path in demo.iterdir():
+        if asset_path.name == "manifest.json":
+            continue
+        content = asset_path.read_bytes()
+        assets.append(
+            {
+                "path": asset_path.name,
+                "bytes": len(content),
+                "sha256": hashlib.sha256(content).hexdigest(),
+            }
+        )
+    write_json(demo / "manifest.json", {"assets": assets})
+    monkeypatch.setenv("RADARWATCH_DEMO_DIR", str(demo))
+
+    app = AppTest.from_file(APP_PATH).run(timeout=30)
+
+    assert not app.exception
+    assert "before and after SAR browse images are identical" in app.error[0].value
