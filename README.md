@@ -17,6 +17,10 @@ interactive case study.
 > more mature 2026 Earth-observation ecosystem, with an emphasis on reproducible
 > SAR processing and operational consequence.
 
+## App preview
+
+![RadarWatch Streamlit case study showing the Valencia flood summary, impact KPIs, and infrastructure screening](docs/assets/radarwatch-app.png)
+
 ## MVP case study
 
 - Event: Valencia flood, 29 October 2024
