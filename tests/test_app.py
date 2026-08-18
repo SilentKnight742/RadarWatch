@@ -9,7 +9,10 @@ APP_PATH = Path(__file__).parents[1] / "app.py"
 
 
 def test_app_avoids_removed_streamlit_width_api() -> None:
-    assert "use_container_width" not in APP_PATH.read_text(encoding="utf-8")
+    source = APP_PATH.read_text(encoding="utf-8")
+    assert "use_container_width" not in source
+    assert "streamlit_folium" not in source
+    assert "st.iframe(" in source
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -124,6 +127,7 @@ def test_app_renders_precomputed_case_study(tmp_path: Path, monkeypatch) -> None
     assert app.title[0].value == "RadarWatch: Valencia 2024"
     assert len(app.metric) == 5
     assert len(app.tabs) == 4
+    assert len(app.get("iframe")) == 1
     assert len(app.warning) == 1
     assert len(app.download_button) == 3
     assert not app.error
