@@ -1262,7 +1262,6 @@ dependencies = [
     { name = "folium" },
     { name = "pandas" },
     { name = "streamlit" },
-    { name = "streamlit-folium" },
 ]
 
 [package.optional-dependencies]
@@ -1315,7 +1314,6 @@ requires-dist = [
     { name = "scipy", marker = "extra == 'pipeline'", specifier = ">=1.15,<2" },
     { name = "shapely", marker = "extra == 'pipeline'", specifier = ">=2.0,<3" },
     { name = "streamlit", specifier = ">=1.50,<2" },
-    { name = "streamlit-folium", specifier = ">=0.25,<1" },
     { name = "typer", marker = "extra == 'pipeline'", specifier = ">=0.15,<1" },
 ]
 provides-extras = ["pipeline", "dev"]
@@ -1618,21 +1616,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ad/4a/6d0bf2f78de59924564caf47298341c09f61bf3814f15f0d15ef09fe1e3d/streamlit-1.61.1.tar.gz", hash = "sha256:68acf1ff1b6005b19205c2777d832deea0c1edd6fbbf7f43f091b96220e5e35f", size = 9907073, upload-time = "2026-08-05T14:51:01.956Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4f/e3/deeea39117e1ffbce29755b45bceb214692e0a0aa496a17ce742b98ef3e1/streamlit-1.61.1-py3-none-any.whl", hash = "sha256:3f0ebf6764c3f938f8107414c9533942fa85a84b57affdaa7727d562210d8ece", size = 10512871, upload-time = "2026-08-05T14:50:59.246Z" },
-]
-
-[[package]]
-name = "streamlit-folium"
-version = "0.27.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "branca" },
-    { name = "folium" },
-    { name = "jinja2" },
-    { name = "streamlit" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/f7/4c/3874663b7db06c7e354ec488a884ccc07cc013daf9b6595bfe0333f7509f/streamlit_folium-0.27.4.tar.gz", hash = "sha256:ff9572ed74d04164b391f59caad4ab022cbca99f27bbafe88dbd7251e4679598", size = 535256, upload-time = "2026-08-03T17:59:03.28Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/44/ebf8b1a1ae14184d4c3d09bde4450933198152b4cbf21a425dccc69cd7b7/streamlit_folium-0.27.4-py3-none-any.whl", hash = "sha256:0214076ff10e9417a5c1079920adbe91e35b9a844b3f45ee9c15277b91c7cb08", size = 536915, upload-time = "2026-08-03T17:59:01.969Z" },
 ]
 
 [[package]]

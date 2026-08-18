@@ -17,7 +17,6 @@ import folium
 import pandas as pd
 import streamlit as st
 from folium.plugins import Fullscreen, SideBySideLayers
-from streamlit_folium import st_folium
 
 ROOT = Path(__file__).resolve().parent
 DEMO = Path(os.environ.get("RADARWATCH_DEMO_DIR", ROOT / "demo_data" / "valencia"))
@@ -317,7 +316,7 @@ st.caption(
     "Drag the vertical divider to compare terrain-corrected VV backscatter. "
     "Use the layer control to inspect detected evidence, references, and exposed infrastructure."
 )
-st_folium(build_map(metrics), width=1300, height=690, returned_objects=[])
+st.iframe(build_map(metrics).get_root().render(), width="stretch", height=690, tab_index=0)
 st.caption(
     "Data: NASA/JPL OPERA via ASF DAAC · European Union, Copernicus EMSR773 · "
     "© OpenStreetMap contributors (ODbL) · © CARTO basemap."
