@@ -1,0 +1,63 @@
+event:
+  id: valencia-2024-horta-sud
+  title: Valencia Flood, Horta Sud
+  event_time: "2024-10-29T14:30:00Z"
+  area_name: Horta Sud, Valencia, Spain
+  bounds_wgs84: [-0.58, 39.36, -0.39, 39.50]
+  analysis_crs: EPSG:32630
+  resolution_m: 30
+
+sar:
+  dataset: OPERA-S1
+  relative_orbit: 103
+  flight_direction: ASCENDING
+  product_version: "1.0"
+  polarizations: [VV, VH]
+  before:
+    acquired_at: "2024-10-19T18:03:10Z"
+    products:
+      - OPERA_L2_RTC-S1_T103-219318-IW3_20241019T180310Z_20241019T204357Z_S1A_30_v1.0
+      - OPERA_L2_RTC-S1_T103-219319-IW3_20241019T180312Z_20241019T204357Z_S1A_30_v1.0
+  after:
+    acquired_at: "2024-10-31T18:03:10Z"
+    products:
+      - OPERA_L2_RTC-S1_T103-219318-IW3_20241031T180310Z_20241102T051440Z_S1A_30_v1.0
+      - OPERA_L2_RTC-S1_T103-219319-IW3_20241031T180312Z_20241102T051440Z_S1A_30_v1.0
+
+detection:
+  water_threshold_db: null
+  water_threshold_bounds_db: [-20.0, -12.0]
+  median_kernel: 3
+  min_component_pixels: 10
+  scenarios:
+    strict: { vv_drop_db: -4.0, vh_drop_db: -3.0 }
+    default: { vv_drop_db: -3.0, vh_drop_db: -2.0 }
+    lenient: { vv_drop_db: -2.0, vh_drop_db: -1.0 }
+
+references:
+  exact_time:
+    label: Operational-product agreement
+    acquired_at: "2024-10-31T18:02:00Z"
+    url: https://services9.arcgis.com/rNFYfizUMWjwfBKB/arcgis/rest/services/EMSR773_AOI01_DEL_PRODUCT_observedEventA_v1_json/FeatureServer/0
+    caveat: Derived from the same Sentinel-1 acquisition; not independent ground truth.
+  optical:
+    label: Cross-sensor temporal comparison
+    acquired_at: "2024-10-31T10:22:00Z"
+    url: https://services9.arcgis.com/rNFYfizUMWjwfBKB/arcgis/rest/services/EMSR773_AOI03_DEL_PRODUCT_observedEventA_v1_json/FeatureServer/0
+    caveat: Independent high-resolution optical delineation acquired about eight hours earlier.
+
+impact:
+  osm_buffer_m: 2000
+  boundary_exit_tolerance_m: 100
+  min_linear_overlap_m: 15
+  building_overlap_fraction: 0.10
+  place_tags: [town, village, suburb, neighbourhood]
+  critical_amenities: [hospital, clinic, ambulance_station, fire_station, police]
+
+paths:
+  workspace: ..
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  stages: data/stages
+  demo: demo_data/valencia
