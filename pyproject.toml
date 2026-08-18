@@ -7,16 +7,23 @@ name = "radarwatch"
 version = "0.1.0"
 description = "SAR-based flood-change and infrastructure-exposure intelligence"
 readme = "README.md"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.14,<3.15"
 license = { file = "LICENSE" }
 authors = [{ name = "RadarWatch contributors" }]
 dependencies = [
+  "folium>=0.20,<1",
+  "pandas>=2.2,<3",
+  "streamlit>=1.50,<2",
+  "streamlit-folium>=0.25,<1",
+]
+
+[project.optional-dependencies]
+pipeline = [
   "earthaccess>=0.16,<1",
   "geopandas>=1.0,<2",
   "networkx>=3.4,<4",
   "numpy>=2.0,<3",
   "osmnx>=2.0,<3",
-  "pandas>=2.2,<3",
   "pillow>=11,<13",
   "pydantic>=2.10,<3",
   "pyarrow>=20,<25",
@@ -28,13 +35,6 @@ dependencies = [
   "scipy>=1.15,<2",
   "shapely>=2.0,<3",
   "typer>=0.15,<1",
-]
-
-[project.optional-dependencies]
-app = [
-  "folium>=0.20,<1",
-  "streamlit>=1.50,<2",
-  "streamlit-folium>=0.25,<1",
 ]
 dev = [
   "pre-commit>=4.0,<5",
@@ -56,7 +56,7 @@ markers = ["integration: tests that use real external services"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
