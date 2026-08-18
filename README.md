@@ -83,7 +83,7 @@ web requests.
 
 Requirements:
 
-- Python 3.12
+- Python 3.14
 - [`uv`](https://docs.astral.sh/uv/)
 - A free NASA Earthdata account with the ASF terms accepted
 

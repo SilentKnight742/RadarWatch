@@ -27,9 +27,10 @@ Confirm:
 1. Commit the generated demo bundle intentionally; raw/intermediate data stays
    ignored.
 2. Connect the public GitHub repository in Streamlit Community Cloud.
-3. Select `app.py` as the entry point and Python 3.12 as the runtime.
+3. Select `app.py` as the entry point and Python 3.14 as the runtime.
 4. Do not create Earthdata or API secrets in the hosted app.
 5. Add the resulting URL and a screenshot/GIF to the README.
 
-`requirements.txt` contains only lightweight app dependencies. The complete
-offline pipeline is locked by `pyproject.toml` and `uv.lock`.
+Community Cloud uses `uv.lock` and installs the lightweight default app
+dependencies. The heavy offline toolchain is isolated in the `pipeline` extra;
+local and CI reproduction use `uv sync --all-extras --locked`.
