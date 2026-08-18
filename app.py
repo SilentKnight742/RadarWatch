@@ -16,6 +16,7 @@ from typing import Any
 import folium
 import pandas as pd
 import streamlit as st
+from branca.element import Element
 from folium.plugins import Fullscreen, SideBySideLayers
 
 ROOT = Path(__file__).resolve().parent
@@ -63,6 +64,14 @@ def bundle_integrity_errors() -> list[str]:
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         if digest != asset.get("sha256"):
             errors.append(f"asset hash does not match manifest: {relative}")
+    before_path = DEMO / "before_vv.png"
+    after_path = DEMO / "after_vv.png"
+    if (
+        before_path.exists()
+        and after_path.exists()
+        and before_path.read_bytes() == after_path.read_bytes()
+    ):
+        errors.append("before and after SAR browse images are identical")
     return errors
 
 
@@ -148,19 +157,50 @@ def build_map(metrics: dict[str, Any]) -> folium.Map:
         image=str(DEMO / "before_vv.png"),
         bounds=bounds,
         name="Before SAR · 19 Oct",
-        opacity=0.82,
+        opacity=1.0,
         control=False,
     )
     after = folium.raster_layers.ImageOverlay(
         image=str(DEMO / "after_vv.png"),
         bounds=bounds,
         name="After SAR · 31 Oct",
-        opacity=0.82,
+        opacity=1.0,
         control=False,
     )
     before.add_to(map_object)
     after.add_to(map_object)
     SideBySideLayers(before, after).add_to(map_object)
+    map_object.get_root().html.add_child(
+        Element(
+            """
+            <style>
+              .radarwatch-date-badge {
+                position: fixed;
+                top: 12px;
+                z-index: 1000;
+                padding: 7px 11px;
+                border: 1px solid rgba(255,255,255,.72);
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(15,23,42,.28);
+                color: white;
+                font: 700 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                letter-spacing: .04em;
+                pointer-events: none;
+              }
+              .radarwatch-before {
+                right: calc(50% + 28px);
+                background: rgba(3,105,161,.92);
+              }
+              .radarwatch-after {
+                left: calc(50% + 28px);
+                background: rgba(190,24,93,.92);
+              }
+            </style>
+            <div class="radarwatch-date-badge radarwatch-before">BEFORE · 19 OCT 2024</div>
+            <div class="radarwatch-date-badge radarwatch-after">AFTER · 31 OCT 2024</div>
+            """
+        )
+    )
 
     add_geojson(
         map_object,
@@ -313,7 +353,8 @@ columns[4].metric("Potentially isolated", isolation["potentially_isolated_count"
 
 st.subheader("Before, after, and consequence")
 st.caption(
-    "Drag the vertical divider to compare terrain-corrected VV backscatter. "
+    "Drag the vertical divider: the left side is BEFORE (19 October) and the right side "
+    "is AFTER (31 October). Both use the same fixed VV backscatter display scale. "
     "Use the layer control to inspect detected evidence, references, and exposed infrastructure."
 )
 st.iframe(build_map(metrics).get_root().render(), width="stretch", height=690, tab_index=0)
