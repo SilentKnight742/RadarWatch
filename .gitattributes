@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalize text files to LF in every checkout so Ruff is platform-independent.
+* text=auto eol=lf
+
+# Derived browse images are binary assets.
+*.png binary
